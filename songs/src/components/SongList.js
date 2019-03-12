@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class SongList extends Component {
-    render () {
-        return <div>Songlist</div>
-    }
+  render() {
+    // this.props === {songs: state.songs}
+    console.log(this.props);
+    return <div>Songlist</div>;
+  }
+}
+
+// You'll always do this
+const mapStateToProps = state => {
+  return { songs: state.songs };
 };
 
-export default connect()(SongList);
-
+export default connect(mapStateToProps)(SongList);
